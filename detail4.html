@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포리랜드 - 포리사진 더 보기</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 📸 13장 대용량 사진첩 전용 고급 갤러리 스타일 */
+        .gallery-container {
+            max-width: 1200px; /* 많은 사진을 보기 좋게 화면을 넓혔습니다 */
+            margin: 40px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        .gallery-title {
+            font-size: 28px;
+            color: #2d3436;
+            margin-bottom: 10px;
+        }
+        .gallery-subtitle {
+            color: #636e72;
+            margin-bottom: 40px;
+        }
+        /* 사진이 많으므로 화면 크기에 따라 3열~4열로 자동 정렬되게 조절했습니다 */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+        .gallery-item {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            aspect-ratio: 1 / 1; /* 이쁜 정사각형 썸네일 유지 */
+        }
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.06); /* 마우스 올리면 부드럽게 확대 */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">🐾 포리랜드</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">홈으로</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="gallery-container">
+        <h2 class="gallery-title">📸 포리의 일상 사진첩 (13장 완료!)</h2>
+        <p class="gallery-subtitle">우리 귀여운 포리의 모든 순간들을 한눈에 모아보세요.</p>
+        
+        <!-- 💡 13장의 사진을 순서대로 세팅해두었습니다! -->
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="ccat.jpeg" alt="포리 1"></div>
+            <div class="gallery-item"><img src="d1.jpeg" alt="포리 2"></div>
+            <div class="gallery-item"><img src="d3.jpeg" alt="포리 3"></div>
+            <div class="gallery-item"><img src="d2.jpeg" alt="포리 4"></div>
+            <div class="gallery-item"><img src="dd3.jpeg" alt="포리 5"></div>
+            <div class="gallery-item"><img src="ddd3.jpeg" alt="포리 6"></div>
+            <div class="gallery-item"><img src="m1.jpeg" alt="포리 7"></div>
+            <div class="gallery-item"><img src="m3.jpeg" alt="포리 8"></div>
+            <div class="gallery-item"><img src="a.jpeg" alt="포리 9"></div>
+            <div class="gallery-item"><img src="aa.jpeg" alt="포리 10"></div>
+            <div class="gallery-item"><img src="aaa.jpeg" alt="포리 11"></div>
+            <div class="gallery-item"><img src="aaaa.jpeg" alt="포리 12"></div>
+            <div class="gallery-item"><img src="aaaaa.jpeg" alt="포리 13"></div>
+        </div>
+        
+        <a href="index.html" class="btn" style="display: inline-block; width: auto; margin-top: 50px; padding: 12px 40px;">🏡 메인 화면으로 돌아가기</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 포리를 사랑하는 누나가. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
