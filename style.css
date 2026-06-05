@@ -1,20 +1,17 @@
 @charset "UTF-8";
 
-/* ==========================================
-   1. 변수 설정 & 기본 리셋
-   ========================================== */
+/* ==========================================================================
+   1. 기본 리셋 & 변수 설정
+   ========================================================================== */
 :root {
-    --primary-color: #ff9f43;       /* 포인트 오렌지 */
-    --primary-light: #fff0e2;       /* 연한 배경용 오렌지 */
-    --accent-color: #ff7675;        /* 태그용 핑크 */
-    --bg-color: #f9f9fb;            /* 메인 배경색 */
-    --card-bg: #ffffff;             /* 카드 및 헤더 배경색 */
-    --text-main: #2d3436;           /* 메인 글자색 */
-    --text-sub: #636e72;            /* 서브 글자색 */
-    --border-color: #f1f2f6;        /* 경계선 색상 */
-    
+    --primary-color: #ff9f43;     /* 포인트 오렌지 */
+    --primary-light: #fff0e2;    /* 연한 배경용 오렌지 */
+    --bg-color: #f9f9fb;         /* 메인 배경색 */
+    --card-bg: #ffffff;          /* 카드 및 헤더 배경색 */
+    --text-main: #2d3436;        /* 메인 글자색 */
+    --text-sub: #636e72;         /* 서브 글자색 */
+    --border-color: #e1f2f6;     /* 경계선 색상 */
     --font-main: 'Noto Sans KR', sans-serif;
-    --font-eng: 'Montserrat', sans-serif;
 }
 
 * {
@@ -24,7 +21,7 @@
 }
 
 html {
-    scroll-behavior: smooth; /* 네비게이션 클릭 시 부드러운 스크롤 */
+    scroll-behavior: smooth;
 }
 
 body {
@@ -32,101 +29,151 @@ body {
     background-color: var(--bg-color);
     color: var(--text-main);
     line-height: 1.6;
-    -webkit-font-smoothing: antialiased; /* 글자 폰트 주변 깨짐 방지 */
 }
 
-/* ==========================================
-   2. 헤더 (Navigation)
-   ========================================== */
+/* ==========================================================================
+   2. 헤더 & 네비게이션
+   ========================================================================== */
 header {
     background-color: var(--card-bg);
-    padding: 1.2rem 8%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    padding: 20px 40px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
 }
 
-header h1 {
-    font-family: var(--font-eng);
-    font-size: 1.6rem;
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
     color: var(--primary-color);
-    font-weight: 700;
-    letter-spacing: -0.5px;
 }
 
-header nav a {
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+header nav ul li a {
     text-decoration: none;
-    color: var(--text-main);
+    color: var(--text-sub);
     font-weight: 500;
-    font-size: 0.95rem;
-    margin-left: 2rem;
-    position: relative;
-    transition: color 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
 }
 
-header nav a:hover {
+header nav ul li a:hover, 
+header nav ul li a.active {
+    background-color: var(--primary-light);
     color: var(--primary-color);
+    font-weight: bold;
 }
 
-/* 하단 슬라이드 바 효과 */
-header nav a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -4px;
-    left: 0;
-    background-color: var(--primary-color);
-    transition: width 0.3s ease;
-}
-
-header nav a:hover::after {
-    width: 100%;
-}
-
-/* ==========================================
-   3. 히어로 섹션 (Main Banner)
-   ========================================== */
+/* ==========================================================================
+   3. 히어로 섹션 (상단 배너)
+   ========================================================================== */
 .hero {
-    background: linear-gradient(135deg, #ffeaa7 0%, #ff9f43 100%);
+    background: linear-gradient(135deg, #ffb86c 0%, #ff9f43 100%);
     color: white;
-    padding: 7rem 5%;
+    padding: 60px 20px;
     text-align: center;
-    border-bottom-left-radius: 40px;
-    border-bottom-right-radius: 40px;
-    box-shadow: 0 10px 20px rgba(255, 159, 67, 0.15);
 }
 
-.hero h2 {
-    font-size: 2.6rem;
-    margin-bottom: 1.2rem;
-    font-weight: 700;
-    letter-spacing: -0.5px;
+.hero-content h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
 }
 
-.hero p {
-    font-size: 1.15rem;
-    opacity: 0.95;
-    font-weight: 300;
+.hero-content p {
+    font-size: 18px;
+    opacity: 0.9;
 }
 
-/* ==========================================
-   4. 메인 콘텐츠 & 그리드
-   ========================================== */
-main {
-    max-width: 1140px;
-    margin: 5rem auto;
-    padding: 0 2rem;
+/* ==========================================================================
+   4. 메인 컨테이너 & 카드 그리드 레이아웃
+   ========================================================================== */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
 .section-title {
-    text-align: center;
-    margin-bottom: 4rem;
-    font-size: 2rem;
-    font-family: var(--font-eng);
-    font-weight: 700;
-    color: var(--text-main);
+    font-size: 24px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 12px;
+}
+
+.section-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 4px;
+    width: 4px;
+    height: 24px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+/* 3열 카드 그리드 설정 */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* ==========================================================================
+   5. 고양이 카드 디자인 (마우스 올리면 슥 올라가는 효과)
+   ========================================================================== */
+.card {
+    background-color: var(--card-bg);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* 카드 이미지 영역 (정사각형 비율 유지) */
+.card-img {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* 1:1 비율을 만드는 핵심 코드 */
+    background-color: #eee;
+}
+
+/* 이미지 태그가 꽉 차게 들어가는 설정 */
+.card-img img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 사진이 찌그러지지 않고 꽉 차게 잘라줌 */
+}
+
+/* 카드 텍스트 내용 */
+.card-body {
+    padding: 25px;
+}
+
+.card-body h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.card-body p {
+    color: var(--text-sub);
+    font-size: 15px;
+    margin-bottom: 20px;
+    height: 4
