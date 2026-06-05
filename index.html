@@ -3,30 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>우리 집 고양이 소개</title>
-    <link rel="stylesheet" href="./style.css">
+    <title>메리랜드 - 메리 소개</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header style="background-color: #ff9f43; padding: 20px; color: white; text-align: center;">
-        <h1>🐾 우리 집 고양이 소개 페이지</h1>
+    <header>
+        <div class="logo">🐾 메리랜드</div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">홈</a></li>
+                <li><a href="detail.html">메리 소개</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main style="max-width: 600px; margin: 40px auto; padding: 20px; text-align: center;">
-        
-        <div class="cat-card" style="border: 1px solid #eee; padding: 20px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
-            
-            <div class="cat-image-wrapper" style="margin-bottom: 20px;">
-                <img src="./cat.jpg" alt="고양이 사진" style="max-width: 100%; height: auto; border-radius: 10px;">
-            </div>
-
-            <div class="cat-info">
-                <h3>세상에서 가장 귀여운 고양이</h3>
-                <p>드디어 깃허브 배포와 이미지 엑박까지 완벽하게 해결했습니다!</p>
-            </div>
+    <section class="hero">
+        <div class="hero-content">
+            <h2>우리집 고양이 메리를 소개합니다</h2>
+            <p>메리의 매력 속으로 빠져보세요.</p>
         </div>
+    </section>
 
+    <main class="container">
+        <h3 class="section-title">이달의 메리</h3>
+        <div class="card-grid">
+            
+            <div class="card">
+                <div class="card-img">
+                    <img src="./cat.jpg" alt="메리 사진 1" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                </div>
+                <div class="card-body">
+                    <h4>코리안 숏헤어</h4>
+                    <p>친근하고 영리하며, 다양한 털 패턴을 가진 매력적인 고양이입니다.</p>
+                    <a href="detail.html" class="btn">자세히 보기</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img">
+                    <img src="./cat.jpg" alt="메리 사진 2" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                </div>
+                <div class="card-body">
+                    <h4>매력1</h4>
+                    <p>동글동글한 입과 코.</p>
+                    <a href="detail.html" class="btn">자세히 보기</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img">
+                    <img src="./cat.jpg" alt="메리 사진 3" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                </div>
+                <div class="card-body">
+                    <h4>매력2</h4>
+                    <p>독특한 포인트 컬러와 사람을 좋아하는 개냥이 성격이 특징입니다.</p>
+                    <a href="detail.html" class="btn">자세히 보기</a>
+                </div>
+            </div>
+
+        </div>
     </main>
+
+    <footer>
+        <p>&copy; 2026 냥이랜드. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
