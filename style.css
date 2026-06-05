@@ -177,3 +177,90 @@ header nav ul li a.active {
     font-size: 15px;
     margin-bottom: 20px;
     height: 4
+/* ==========================================================================
+   7. 반응형 미디어 쿼리 (모바일 & 태블릿 최적화)
+   ========================================================================== */
+
+/* 1. 태블릿 화면 (화면 너비 992px 이하) */
+@media (max-width: 992px) {
+    .container, .gallery-container {
+        max-width: 1000px;
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+    
+    .hero-content h2 {
+        font-size: 28px;
+    }
+    
+    .card-grid, .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+    }
+}
+
+/* 2. 스마트폰 화면 (화면 너비 600px 이하) */
+@media (max-width: 600px) {
+    /* 헤더 로고와 메뉴를 위아래로 정렬하여 좁은 화면 해결 */
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+    }
+
+    header .logo {
+        font-size: 20px;
+    }
+
+    header nav ul {
+        gap: 10px;
+    }
+
+    header nav ul li a {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+
+    /* 상단 배너 글씨 크기 축소 */
+    .hero {
+        padding: 40px 15px;
+    }
+
+    .hero-content h2 {
+        font-size: 22px;
+    }
+
+    .hero-content p {
+        font-size: 15px;
+    }
+
+    .section-title {
+        font-size: 20px;
+    }
+
+    /* 스마트폰에서는 메인 화면 카드를 1열로 큼직하게 배치 */
+    .card-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* 포리 사진 13장 모음집은 스마트폰에서 2열 바둑판으로 꽉 차고 이쁘게 정렬 */
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px; /* 스마트폰에서는 여백을 줄여 사진을 더 크게 보여줍니다 */
+    }
+    
+    .gallery-item {
+        border-radius: 10px; /* 작은 화면에 맞게 둥근 모서리 조절 */
+    }
+
+    .card-body {
+        padding: 20px;
+    }
+
+    footer {
+        margin-top: 40px;
+        padding: 20px;
+        font-size: 12px;
+    }
+}
