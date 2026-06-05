@@ -3,10 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>메리랜드 - 상세 소개</title>
+    <title>메리랜드 - 메리 더 보기</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* 상세 페이지 전용 추가 스타일 */
+        .detail-container { max-width: 1000px; margin: 40px auto; padding: 0 20px; text-align: center; }
+        .gallery-title { font-size: 28px; margin-bottom: 10px; color: #ff9f43; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 30px; }
+        .gallery-item { background: #fff; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); aspect-ratio: 1/1; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+        .back-btn { display: inline-block; width: auto; margin-top: 40px; padding: 12px 35px; background-color: #ff9f43; color: white; text-decoration: none; border-radius: 25px; font-weight: bold; transition: background 0.3s; }
+        .back-btn:hover { background-color: #e0852b; }
+        .section-intro { color: #636e72; font-size: 16px; margin-bottom: 40px; }
+    </style>
 </head>
 <body>
+
     <header>
         <div class="logo">🐾 메리랜드</div>
         <nav>
@@ -16,10 +28,24 @@
             </ul>
         </nav>
     </header>
-    <main class="container" style="text-align: center; margin-top: 50px;">
-        <h2>🐱 우리 메리를 소개합니다!</h2>
-        <p style="margin-top: 20px; color: #636e72;">메리는 아주 귀엽고 매력이 넘치는 개냥이랍니다.</p>
-        <a href="index.html" class="btn" style="display: inline-block; width: auto; margin-top: 30px; padding: 10px 30px;">홈으로 돌아가기</a>
+
+    <main class="detail-container">
+        <h2 class="gallery-title">📸 메리의 일상 갤러리</h2>
+        <p class="section-intro">우리 귀여운 메리의 숨겨진 일상 사진들을 모두 공개합니다!</p>
+
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="cat.jpg" alt="메리 사진 1"></div>
+            <div class="gallery-item"><img src="ccat.jpg" alt="메리 사진 2"></div>
+            <div class="gallery-item"><img src="cccat.jpg" alt="메리 사진 3"></div>
+            
+            </div>
+
+        <a href="index.html" class="back-btn">🏡 홈 화면으로 돌아가기</a>
     </main>
+
+    <footer>
+        <p>&copy; 2026 냥이랜드. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
